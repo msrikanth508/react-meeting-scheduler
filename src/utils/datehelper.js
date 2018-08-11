@@ -80,7 +80,7 @@ const datehelper = {
    * @returns
    */
   mergeDateTime: function(date, time) {
-    const t = moment(date, "DD-MM-YYYY");
+    const t = moment(date);
     const minHours = time.split(":", 2);
     t.set({
       h: minHours[0],

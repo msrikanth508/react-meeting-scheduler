@@ -130,8 +130,8 @@ class EventModal extends React.PureComponent {
               displayMode="portrait"
               firstDayOfWeek={1}
               autoOk
-              onChange={e => {
-                this.onValueChanged("startDate", e);
+              onChange={(e, obj) => {
+                this.onValueChanged("startDate", obj);
               }}
             />
             <SelectField
@@ -152,8 +152,8 @@ class EventModal extends React.PureComponent {
               displayMode="portrait"
               firstDayOfWeek={1}
               autoOk
-              onChange={e => {
-                this.onValueChanged("endDate", e);
+              onChange={(e, obj) => {
+                this.onValueChanged("endDate", obj);
               }}
             />
 
