@@ -1,0 +1,53 @@
+{
+  "name": "react-meeting-scheduler",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.1.1",
+    "eslint-config-react-app": "^2.1.0",
+    "eslint-plugin-flowtype": "^2.34.1",
+    "eslint-plugin-import": "^2.6.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.1.0",
+    "moment": "^2.22.2",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-md": "^1.2.8",
+    "react-proptypes": "^1.0.0",
+    "toastr": "^2.1.4",
+    "webfontloader": "^1.6.28"
+  },
+  "devDependencies": {
+    "node-sass-chokidar": "^0.0.3",
+    "npm-run-all": "^4.1.2",
+    "react-scripts": "1.0.17"
+  },
+  "scripts": {
+    "build-css": "node-sass-chokidar --include-path ./node_modules src/ -o src/",
+    "watch-css": "npm run build-css && npm run build-css -- --watch --recursive",
+    "start-js": "react-scripts start",
+    "start": "npm-run-all -p watch-css start-js",
+    "build": "npm run build-css && react-scripts build",
+    "test": "echo \"no test cases\" && exit 1",
+    "eject": "react-scripts eject"
+  },
+  "keywords": [
+    "react",
+    "calendar",
+    "ui",
+    "control",
+    "scheduler",
+    "meeting"
+  ],
+  "author": "Srikanth Mangipudi <msrikanth508@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/msrikanth508/react-meeting-scheduler",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:msrikanth508/react-meeting-scheduler.git"
+  },
+  "bugs": {
+    "url": "https://github.com/msrikanth508/react-meeting-scheduler/issues"
+  }
+}
