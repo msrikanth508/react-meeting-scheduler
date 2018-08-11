@@ -34,7 +34,7 @@ const TimeSlotGroup = ({
     ];
 
     timeSlots.push(
-      <div className="cell" key={d.toISOString()}>
+      <div className="cell" key={d.toString()}>
         {slots.map((slot, i) => {
           if (!isTimeSlotContent) {
             commonProps.onClick = onTimeSlotSelected;

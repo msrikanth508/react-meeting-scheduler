@@ -22,12 +22,13 @@ const Event = ({ events, date, onDragStart, onEventClicked }) => {
     };
     const titleStyles = {};
 
-    if (eventDuration === 0.5) {
+    if (eventDuration <= 0.5) {
       titleStyles.width = "50%";
       titleStyles.textAlign= 'left';
     }
     return (
       <div
+        key={item.id}
         className="event"
         style={eventStyle}
         onDragStart={e => onDragStart(e, item.id)}
