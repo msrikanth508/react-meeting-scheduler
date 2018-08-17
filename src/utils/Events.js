@@ -37,6 +37,13 @@ class Events {
       message: "Will review projec status and discuss on road map."
     },
     {
+      id: 51,
+      title: "one-to-one Meeting",
+      start: new Date(2018, 7, 13, 10, 0, 0),
+      end: new Date(2018, 7, 13, 10, 30, 0),
+      message: "one-to-one Meeting."
+    },
+    {
       id: 6,
       title: "Yoga classes",
       start: new Date(2018, 7, 14, 4, 0, 0),
@@ -55,7 +62,40 @@ class Events {
       start: new Date(2018, 7, 19, 6, 0, 0),
       end: new Date(2018, 7, 19, 19, 0, 0),
       message: "Let's have some fun!"
-    }
+    }, {
+      id: 9,
+      title: "Family Outing",
+      start: new Date(2018, 7, 19, 6, 0, 0),
+      end: new Date(2018, 7, 19, 19, 0, 0),
+      message: "Family Outing"
+    }, {
+      id: 10,
+      title: "Cousin marriage",
+      start: new Date(2018, 7, 19, 6, 0, 0),
+      end: new Date(2018, 7, 19, 19, 0, 0),
+      message: "Cousin marriage"
+    },
+    {
+      id: 11,
+      title: "Project Review Meeting",
+      start: new Date(2018, 7, 20, 9, 0, 0),
+      end: new Date(2018, 7, 20, 10, 30, 0),
+      message: "Will review projec status and discuss on road map."
+    },
+    {
+      id: 12,
+      title: "Company Annocuments!",
+      start: new Date(2018, 7, 22, 9, 0, 0),
+      end: new Date(2018, 7, 22, 11, 0, 0),
+      message: "Company Annocuments!"
+    },
+    {
+      id: 12,
+      title: "Design Discussion",
+      start: new Date(2018, 7, 23, 10, 0, 0),
+      end: new Date(2018, 7, 23, 13, 0, 0),
+      message: "Design Discussion on marketplace"
+    },
   ];
   static save(events) {
     window.localStorage.setItem("events", JSON.stringify(events));

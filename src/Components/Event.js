@@ -11,21 +11,35 @@ const Event = ({ events, date, onDragStart, onEventClicked }) => {
   const renderEvents = events.filter(event =>
     datehelper.isSameDay(date, event.start)
   );
+  const timeCollisionMapping = {};
 
   return renderEvents.map(item => {
     const durationInHours = datehelper.diffInHours(item.start, date);
     const eventDuration = datehelper.diffInHours(item.end, item.start);
     const eventStyle = {
-      top: `${durationInHours * baseHeight}px`,
-      height: `${eventDuration * baseHeight}px`,
+      top: durationInHours * baseHeight,
+      height: eventDuration * baseHeight,
       width: "12.5%"
     };
     const titleStyles = {};
-
+    const timing = `${datehelper.format(item.start, "HH:mm")} - ${datehelper.format(
+      item.end,
+      "HH:mm"
+    )}`
     if (eventDuration <= 0.5) {
       titleStyles.width = "50%";
       titleStyles.textAlign= 'left';
     }
+    if(!timeCollisionMapping[timing]) {
+      timeCollisionMapping[timing] = 1;
+    } else {
+      const minus =  timeCollisionMapping[timing] * 50;
+      eventStyle.top += minus;
+      eventStyle.height -= minus;
+      timeCollisionMapping[timing] +=  1;
+    }
+    eventStyle.top += 'px';
+    eventStyle.height += 'px';
     return (
       <div
         key={item.id}
@@ -40,10 +54,7 @@ const Event = ({ events, date, onDragStart, onEventClicked }) => {
           {item.title}
         </div>
         <div className="content">
-          {`${datehelper.format(item.start, "HH:mm")} - ${datehelper.format(
-            item.end,
-            "HH:mm"
-          )}`}
+          {timing}
         </div>
       </div>
     );
